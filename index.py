@@ -126,6 +126,8 @@ def selenium_automation(users, code) -> None:
     # Begin automation process
     for user in users:
         print(user)
+        if user["active"] == 0:
+            continue
         automation(driver=pg_driver, user=user, code=code)
 
     # Terminate automation process

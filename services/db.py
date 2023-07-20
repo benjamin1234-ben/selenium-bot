@@ -5,7 +5,7 @@ import logging
 def connect_db(uri : str):
     try:
         client = MongoClient(uri)
-        db = client["oddz_dev"]
+        db = client["oddz_staging"]
     except TimeoutError:
         logging.error("Cannot connect to database, may be due to poor network connectivity")
         connect_db(uri=uri)
